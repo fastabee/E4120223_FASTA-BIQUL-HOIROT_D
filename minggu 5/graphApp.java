@@ -7,7 +7,7 @@ package latihan;
 
 /**
  *
- * @author Khoirunnisa
+ * @author fastabee
  */
 public class GraphApp {
     public static void main(String[] args){
