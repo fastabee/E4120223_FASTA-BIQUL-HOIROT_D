@@ -1,0 +1,26 @@
+// for gradle  module 
+apply plugin: 'com.google.gms.google-services'
+
+implementation platform('com.google.firebase:firebase-bom:29.0.0')
+implementation 'com.google.firebase:firebase-analytics'
+
+// firebase sdk BoM
+implementation 'com.google.firebase:firebase-auth'
+
+// for checking authentication status
+private FirebaseAuth mAuth;
+
+// Initialize Firebase Auth
+mAuth = FirebaseAuth.getInstance();
+
+// for checking that user hasbeen logingin or not
+@Override
+public void onStart() {
+    super.onStart();
+    // Check if user is signed in (non-null) and update UI accordingly.
+    FirebaseUser currentUser = mAuth.getCurrentUser();
+    if(currentUser != null){
+        reload();
+    }
+}
+//foro adding new user in registerframe
